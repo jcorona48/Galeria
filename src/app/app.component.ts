@@ -1,15 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CardComponent } from './components/card/card.component';
-import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule  } from '@angular/common/http';
 import { Product } from '@/models/Product';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CardComponent, HttpClientModule, CommonModule],
+  imports: [RouterOutlet, CardComponent,  HttpClientModule, CommonModule, ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -19,8 +18,9 @@ export class AppComponent {
   products: Product[] = [];
   ngOnInit() {
     this.http
-      .get<Product[]>('https://api.escuelajs.co/api/v1/products')
+      .get<Product[]>('https://galeria-api-sigma.vercel.app/products')
       .subscribe((data) => {
+        console.log(data);
         this.products = data;
       });
   }

@@ -14,9 +14,7 @@ export class CardComponent {
     title: 'Café',
     price: 5,
     description: 'Café de grano',
-    images: [
-      'https://editorialtelevisa.brightspotcdn.com/wp-content/uploads/2013/04/cafe-espresso.jpg',
-    ],
+    image:'https://editorialtelevisa.brightspotcdn.com/wp-content/uploads/2013/04/cafe-espresso.jpg',
   };
 
   @Input() deleteToCard = (product: Product) => {
