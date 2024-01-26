@@ -1,0 +1,23 @@
+<article>
+    <header>
+        <div class="imgContainer">
+            <img [ngSrc]="product.images[0]" [alt]="product.title" width="600" height="600" />
+            <span>
+                ${{ product.price }}
+            </span>
+        </div>
+        <h2>
+            {{ product.title}}
+        </h2>
+    </header>
+    <main>
+        <p>
+            {{ product.description }}
+        </p>
+    </main>
+    <footer>
+        <button (click)="deleteToCard(product)">
+            Eliminar
+        </button>
+    </footer>
+</article>
